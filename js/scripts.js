@@ -14,12 +14,12 @@ $(document).ready(function() {
 
     var newPlace = new Place(inputtedCityState, inputtedCountry);
 
-    $("ul#places").append("<li><span class='place'>" + newPlace.cityState + "</span></li>");
+    $("ul#places").append("<li><span class='places'>" + newPlace.cityState + "</span></li>");
 
     $(".places").last().click(function() {
       $("#show-places").show();
       $("#show-places h2").text(newPlace.cityState);
-      $(".cityState").text(newPlace.cityState);
+      $(".city-state").text(newPlace.cityState);
       $(".country").text(newPlace.country);
     });
 
