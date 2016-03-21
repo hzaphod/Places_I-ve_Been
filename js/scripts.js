@@ -1,29 +1,29 @@
 //business logic
-function Contact(first, last) {
-  this.firstName = first;
-  this.lastName = last;
+function Place(cityState, country) {
+  this.cityState = cityState;
+  this.country = country;
 }
 
 // user interface logic
 $(document).ready(function() {
-  $("form#new-contact").submit(function(event) {
+  $("form#new-place").submit(function(event) {
     event.preventDefault();
 
-    var inputtedFirstName = $("input#new-first-name").val();
-    var inputtedLastName = $("input#new-last-name").val();
+    var inputtedCityState = $("input#new-city-state").val();
+    var inputtedCountry = $("input#new-country").val();
 
-    var newContact = new Contact(inputtedFirstName, inputtedLastName);
+    var newPlace = new Place(inputtedCityState, inputtedCountry);
 
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+    $("ul#places").append("<li><span class='place'>" + newPlace.cityState + "</span></li>");
 
-    $(".contact").last().click(function() {
-      $("#show-contact").show();
-      $("#show-contact h2").text(newContact.firstName);
-      $(".first-name").text(newContact.firstName);
-      $(".last-name").text(newContact.lastName);
+    $(".places").last().click(function() {
+      $("#show-places").show();
+      $("#show-places h2").text(newPlace.cityState);
+      $(".city-state").text(newPlace.cityState);
+      $(".country").text(newPlace.country);
     });
 
-    $("input#new-first-name").val("");
+    $("input#new-city-state").val("");
     $("input#new-last-name").val("");
   });
 });
