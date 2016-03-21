@@ -19,11 +19,11 @@ $(document).ready(function() {
     $(".places").last().click(function() {
       $("#show-places").show();
       $("#show-places h2").text(newPlace.cityState);
-      $(".city-state").text(newPlace.cityState);
+      $(".cityState").text(newPlace.cityState);
       $(".country").text(newPlace.country);
     });
 
     $("input#new-city-state").val("");
-    $("input#new-last-name").val("");
+    $("input#new-country").val("");
   });
 });
